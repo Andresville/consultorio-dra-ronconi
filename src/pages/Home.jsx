@@ -1,14 +1,19 @@
 import { Box, Typography, Button, Grid, Card, CardContent } from "@mui/material";
 import bannerImage from "../assets/images/foto-banner.jpg";
+import ortodonciaIcon from "../assets/images/ortodoncia.png";
+import implantesIcon from "../assets/images/implante-dental.png";
+import esteticaIcon from "../assets/images/blanqueamiento-dental.png";
+import endodonciaIcon from "../assets/images/endodoncia.png";
+import protesisIcon from "../assets/images/endodoncia.png";
 
 const servicios = [
-    { nombre: "Odontología general" },
-    { nombre: "Ortodoncia" },
-    { nombre: "Implantes" },
-    { nombre: "Estética dental" },
-    { nombre: "Endodoncia" },
-    { nombre: "Prótesis" },
+    { nombre: "Ortodoncia", icon: ortodonciaIcon },
+    { nombre: "Implantes", icon: implantesIcon },
+    { nombre: "Estética dental", icon: esteticaIcon },
+    { nombre: "Endodoncia", icon: endodonciaIcon },
+    { nombre: "Prótesis", icon: protesisIcon },
 ];
+
 
 function Home() {
     return (
@@ -95,6 +100,14 @@ function Home() {
                         <Grid item xs={12} sm={6} md={4} key={servicio.nombre}>
                             <Card sx={{ p: 2, textAlign: "center", borderRadius: 3, boxShadow: 2 }}>
                                 <CardContent>
+                                    <Box sx={{ display: 'flex', justifyContent: 'center', mb: 1 }}>
+                                        <Box
+                                            component="img"
+                                            src={servicio.icon}
+                                            alt={servicio.nombre}
+                                            sx={{ width: 48, height: 48 }}
+                                        />
+                                    </Box>
                                     <Typography variant="h6">{servicio.nombre}</Typography>
                                 </CardContent>
                             </Card>
@@ -115,10 +128,10 @@ function Home() {
                 <Typography variant="h4" gutterBottom>
                     ¿Listo para tu próxima consulta?
                 </Typography>
-                <Button 
-                variant="contained" 
-                size="large"
-                sx={{
+                <Button
+                    variant="contained"
+                    size="large"
+                    sx={{
                         width: "50%",
                         maxWidth: 400,
                         borderRadius: 2,
