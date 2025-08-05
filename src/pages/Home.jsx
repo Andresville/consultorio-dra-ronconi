@@ -1,19 +1,7 @@
 import { Box, Typography, Button, Grid, Card, CardContent } from "@mui/material";
-import bannerImage from "../assets/images/foto-banner.jpg";
-import ortodonciaIcon from "../assets/images/ortodoncia.png";
-import implantesIcon from "../assets/images/implante-dental.png";
-import esteticaIcon from "../assets/images/blanqueamiento-dental.png";
-import endodonciaIcon from "../assets/images/endodoncia.png";
-import protesisIcon from "../assets/images/protesis-dental.png";
-
-const servicios = [
-    { nombre: "Ortodoncia", icon: ortodonciaIcon },
-    { nombre: "Implantes", icon: implantesIcon },
-    { nombre: "Estética dental", icon: esteticaIcon },
-    { nombre: "Endodoncia", icon: endodonciaIcon },
-    { nombre: "Prótesis", icon: protesisIcon },
-];
-
+import { Link } from "react-router-dom";
+import bannerImage from "../assets/imagenes/foto-banner.jpg";
+import servicios from "../data/servicios";
 
 function Home() {
     return (
@@ -93,19 +81,49 @@ function Home() {
             {/* Servicios */}
             <Box sx={{ p: 6, bgcolor: "background.paper" }}>
                 <Typography variant="h4" gutterBottom textAlign="center">
-                    Nuestros servicios
+                    Nuestras especialidades
                 </Typography>
                 <Grid container spacing={4} justifyContent="center" sx={{ mt: 2 }}>
                     {servicios.map((servicio) => (
                         <Grid item xs={12} sm={6} md={4} key={servicio.nombre}>
-                            <Card sx={{ p: 2, textAlign: "center", borderRadius: 3, boxShadow: 6, width: 200 }}>
-                                <CardContent>
-                                    <Box sx={{ display: 'flex', justifyContent: 'center', mb: 1 }}>
+                            <Card
+                                component={Link}
+                                to={servicio.path}
+                                sx={{
+                                    height: "100%",
+                                    width: 200, 
+                                    textDecoration: "none",
+                                    color: "inherit",
+                                    borderRadius: 3,
+                                    boxShadow: 6,
+                                    transition: "all 0.3s ease-in-out",
+                                    display: "flex",
+                                    flexDirection: "column",
+                                    justifyContent: "center",
+                                    alignItems: "center",
+                                    "&:hover": {
+                                        boxShadow: 10,
+                                        transform: "scale(1.03)",
+                                    },
+                                }}
+                            >
+                                <CardContent
+                                    sx={{
+                                        width: "100%",
+                                        display: "flex",
+                                        flexDirection: "column",
+                                        alignItems: "center",
+                                        justifyContent: "center",
+                                        textAlign: "center",
+                                        p: 3,
+                                    }}
+                                >
+                                    <Box sx={{ mb: 2 }}>
                                         <Box
                                             component="img"
                                             src={servicio.icon}
                                             alt={servicio.nombre}
-                                            sx={{ width: 48, height: 48 }}
+                                            sx={{ width: 60, height: 60 }}
                                         />
                                     </Box>
                                     <Typography variant="h6">{servicio.nombre}</Typography>
@@ -115,6 +133,7 @@ function Home() {
                     ))}
                 </Grid>
             </Box>
+
 
             {/* Sección destacada */}
             <Box sx={{ p: 6, bgcolor: "secondary.main", textAlign: "center" }}>
