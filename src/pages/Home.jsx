@@ -4,7 +4,7 @@ import ortodonciaIcon from "../assets/images/ortodoncia.png";
 import implantesIcon from "../assets/images/implante-dental.png";
 import esteticaIcon from "../assets/images/blanqueamiento-dental.png";
 import endodonciaIcon from "../assets/images/endodoncia.png";
-import protesisIcon from "../assets/images/endodoncia.png";
+import protesisIcon from "../assets/images/protesis-dental.png";
 
 const servicios = [
     { nombre: "Ortodoncia", icon: ortodonciaIcon },
@@ -98,7 +98,7 @@ function Home() {
                 <Grid container spacing={4} justifyContent="center" sx={{ mt: 2 }}>
                     {servicios.map((servicio) => (
                         <Grid item xs={12} sm={6} md={4} key={servicio.nombre}>
-                            <Card sx={{ p: 2, textAlign: "center", borderRadius: 3, boxShadow: 2 }}>
+                            <Card sx={{ p: 2, textAlign: "center", borderRadius: 3, boxShadow: 6, width: 200 }}>
                                 <CardContent>
                                     <Box sx={{ display: 'flex', justifyContent: 'center', mb: 1 }}>
                                         <Box

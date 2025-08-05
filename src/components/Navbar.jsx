@@ -18,14 +18,13 @@ import { Link } from "react-router-dom";
 const navItems = [
   { label: "Inicio", path: "/" },
   { label: "Sobre Nosotros", path: "/sobre-nosotros" },
-  { label: "Servicios", path: "/servicios" },
-  { label: "Equipo", path: "/equipo" },
+  { label: "Especialidades", path: "/especialidades" },
   { label: "Contacto", path: "/contacto" },
 ];
 
 function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const theme = useTheme(); // accedé a los colores del theme
+  const theme = useTheme();
 
   const handleDrawerToggle = () => setMobileOpen(!mobileOpen);
 
@@ -57,6 +56,7 @@ function Navbar() {
         sx={{
           backgroundColor: theme.palette.primary.main,
           color: theme.palette.text.primary,
+          paddingX: { xs: 1, sm: 3, md: 16},
         }}
       >
         <Toolbar>
