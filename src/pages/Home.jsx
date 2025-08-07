@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { Box, Typography, Grid, Card, CardContent } from "@mui/material";
 import { Link } from "react-router-dom";
 import bannerImage from "../assets/imagenes/foto-banner.jpg";
@@ -6,6 +8,20 @@ import WhatsAppButton from "../components/WhatsAppButton";
 
 
 function Home() {
+
+    const location = useLocation();
+
+    useEffect(() => {
+        if (location.hash === "#especialidades") {
+            const element = document.getElementById("especialidades");
+            if (element) {
+                setTimeout(() => {
+                    element.scrollIntoView({ behavior: "smooth" });
+                }, 100); // pequeño delay para asegurar renderizado
+            }
+        }
+    }, [location]);
+
     return (
         <>
             {/* Banner Hero con texto centrado */}
@@ -76,7 +92,7 @@ function Home() {
                         variant="h5"
                         sx={{
                             fontSize: { xs: "1.1rem", sm: "1.4rem", md: "1.8rem" },
-                            py:2,
+                            py: 2,
                         }}
                     >
                         Atención odontológica integral.
@@ -112,7 +128,7 @@ function Home() {
             </Box>
 
             {/* Servicios */}
-            <Box sx={{ p: 6, bgcolor: "background.paper" }}>
+            <Box id="especialidades" sx={{ p: 6, bgcolor: "background.paper" }}>
                 <Typography variant="h4" gutterBottom textAlign="center">
                     Nuestras especialidades
                 </Typography>

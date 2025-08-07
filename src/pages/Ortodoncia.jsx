@@ -126,6 +126,9 @@ function Ortodoncia() {
                     </Box>
                 </Box>
             </Container>
+
+            <WhatsAppButton floating />
+            
         </>
     );
 }

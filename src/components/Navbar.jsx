@@ -17,8 +17,8 @@ import { Link } from "react-router-dom";
 
 const navItems = [
   { label: "Inicio", path: "/" },
-  { label: "Sobre Nosotros", path: "/sobre-nosotros" },
-  { label: "Especialidades", path: "/especialidades" },
+  { label: "Sobre Nosotros"}, //path: "/sobre-nosotros" },
+  { label: "Especialidades", path: "/#especialidades" },
 ];
 
 function Navbar() {
@@ -29,7 +29,11 @@ function Navbar() {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography variant="h6" sx={{ my: 2, color: theme.palette.text.primary }}>
+      <Typography variant="h6" sx={{ 
+        my: 2, 
+        mx: { xs: 2}, 
+        color: theme.palette.text.primary 
+        }}>
         Dra. Mariela Ronconi
       </Typography>
       <List>
