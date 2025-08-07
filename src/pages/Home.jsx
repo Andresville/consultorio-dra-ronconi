@@ -1,13 +1,24 @@
-import { Box, Typography, Button, Grid, Card, CardContent } from "@mui/material";
+import { Box, Typography, Grid, Card, CardContent } from "@mui/material";
 import { Link } from "react-router-dom";
 import bannerImage from "../assets/imagenes/foto-banner.jpg";
 import servicios from "../data/servicios";
+import WhatsAppButton from "../components/WhatsAppButton";
+
 
 function Home() {
     return (
         <>
             {/* Banner Hero con texto centrado */}
-            <Box sx={{ width: "100%", position: "relative", height: "70vh", overflow: "hidden", mt: 2 }}>
+            <Box
+                sx={{
+                    width: "100%",
+                    position: "relative",
+                    height: { xs: "50vh", sm: "60vh", md: "70vh" },
+                    mt: 2,
+                    bgcolor: "background.default",
+                }}
+            >
+                {/* Imagen de fondo */}
                 <Box
                     component="img"
                     src={bannerImage}
@@ -22,6 +33,8 @@ function Home() {
                         zIndex: 1,
                     }}
                 />
+
+                {/* Overlay de color oscuro */}
                 <Box
                     sx={{
                         position: "absolute",
@@ -29,43 +42,63 @@ function Home() {
                         left: 0,
                         width: "100%",
                         height: "100%",
+                        backgroundColor: "rgba(0, 0, 0, 0.4)",
                         zIndex: 2,
+                    }}
+                />
+
+                {/* Texto centrado */}
+                <Box
+                    sx={{
+                        position: "relative",
+                        zIndex: 3,
+                        height: "100%",
                         display: "flex",
                         flexDirection: "column",
                         justifyContent: "center",
                         alignItems: "center",
                         textAlign: "center",
-                        backgroundColor: "rgba(0, 0, 0, 0.4)",
                         px: 2,
                         color: "common.white",
                     }}
                 >
-                    <Typography variant="h2" gutterBottom sx={{ fontWeight: "bold" }}>
+                    <Typography
+                        variant="h2"
+                        gutterBottom
+                        sx={{
+                            fontWeight: "bold",
+                            fontSize: { xs: "2rem", sm: "2.2rem", md: "3rem" },
+                        }}
+                    >
                         Bienvenidos al consultorio de la Dra. Mariela Ronconi
                     </Typography>
-                    <Typography variant="h5">
+                    <Typography
+                        variant="h5"
+                        sx={{
+                            fontSize: { xs: "1.1rem", sm: "1.4rem", md: "1.8rem" },
+                            py:2,
+                        }}
+                    >
                         Atención odontológica integral.
                     </Typography>
-                    <Typography variant="h4" gutterBottom sx={{ fontWeight: "bold" }}>
+                    <Typography
+                        variant="h4"
+                        gutterBottom
+                        sx={{
+                            fontWeight: "bold",
+                            fontSize: { xs: "1.6rem", sm: "1.8rem", md: "2.2rem" },
+                        }}
+                    >
                         Calidez, Tecnología y Compromiso.
                     </Typography>
                 </Box>
             </Box>
 
+
             <Box sx={{ display: "flex", justifyContent: "center", mt: 4 }}>
-                <Button
-                    variant="contained"
-                    size="large"
-                    sx={{
-                        width: "50%",
-                        maxWidth: 400,
-                        borderRadius: 2,
-                        color: "text.primary",
-                    }}
-                >
-                    Reservar Turno
-                </Button>
+                <WhatsAppButton label="Reservar Turno" />
             </Box>
+
 
             {/* Bienvenida */}
             <Box sx={{ p: 6, bgcolor: "background.default", textAlign: "center" }}>
@@ -91,7 +124,7 @@ function Home() {
                                 to={servicio.path}
                                 sx={{
                                     height: "100%",
-                                    width: 200, 
+                                    width: 200,
                                     textDecoration: "none",
                                     color: "inherit",
                                     borderRadius: 3,
@@ -147,18 +180,12 @@ function Home() {
                 <Typography variant="h4" gutterBottom>
                     ¿Listo para tu próxima consulta?
                 </Typography>
-                <Button
-                    variant="contained"
-                    size="large"
-                    sx={{
-                        width: "50%",
-                        maxWidth: 400,
-                        borderRadius: 2,
-                        color: "text.primary",
-                    }}>
-                    Contactanos
-                </Button>
+                <WhatsAppButton label="Contactanos" />
             </Box>
+
+            <WhatsAppButton floating />
+
+
         </>
     );
 }

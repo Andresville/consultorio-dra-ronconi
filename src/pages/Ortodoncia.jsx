@@ -1,8 +1,8 @@
-import React from "react";
-import { Box, Typography, Container, Grid, Button } from "@mui/material";
+import { Box, Typography, Container, Grid } from "@mui/material";
 import ortodonciaBanner from "../assets/imagenes/ortodoncia-banner2.jpg";
-import ortodonciaDetalle from "../assets/imagenes/ortodoncia-banner.jpg"; 
-import ortodonciaDetalle2 from "../assets/imagenes/ortodoncia-banner3.jpg"; 
+import ortodonciaDetalle from "../assets/imagenes/ortodoncia-banner.jpg";
+import ortodonciaDetalle2 from "../assets/imagenes/ortodoncia-banner3.jpg";
+import WhatsAppButton from "../components/WhatsAppButton";
 
 function Ortodoncia() {
     return (
@@ -54,10 +54,10 @@ function Ortodoncia() {
                         <Typography variant="h5" gutterBottom fontWeight="bold">
                             ¿Qué es la ortodoncia?
                         </Typography>
-                        <Typography variant="body1" paragraph>
+                        <Typography variant="body1">
                             La ortodoncia es una especialidad de la odontología que se encarga del estudio, prevención, diagnóstico y tratamiento de las anomalías de forma, posición, relación y función de las estructuras dentomaxilofaciales.
                         </Typography>
-                        <Typography variant="body1" paragraph>
+                        <Typography variant="body1">
                             Su objetivo es restablecer el equilibrio morfológico y funcional de la boca y la cara, mejorando también la estética facial.
                         </Typography>
                     </Grid>
@@ -76,7 +76,7 @@ function Ortodoncia() {
                             }}
                         />
                     </Grid>
-                     <Grid item xs={12} md={6}>
+                    <Grid item xs={12} md={6}>
                         <Box
                             component="img"
                             src={ortodonciaDetalle2}
@@ -97,7 +97,7 @@ function Ortodoncia() {
                     <Typography variant="h5" gutterBottom fontWeight="bold">
                         Tipos de tratamientos
                     </Typography>
-                    <Typography variant="body1" paragraph>
+                    <Typography variant="body1">
                         En nuestro consultorio trabajamos con distintas alternativas para cada necesidad:
                     </Typography>
                     <ul>
@@ -121,14 +121,9 @@ function Ortodoncia() {
                     <Typography variant="h6" gutterBottom>
                         ¡Agendá tu consulta para evaluar el mejor tratamiento para vos!
                     </Typography>
-                    <Button
-                        variant="contained"
-                        color="primary"
-                        size="large"
-                        sx={{ borderRadius: 2, mt: 2 }}
-                    >
-                        Solicitar turno
-                    </Button>
+                    <Box sx={{ display: "flex", justifyContent: "center", mt: 4 }}>
+                        <WhatsAppButton label="Reservar Turno" />
+                    </Box>
                 </Box>
             </Container>
         </>

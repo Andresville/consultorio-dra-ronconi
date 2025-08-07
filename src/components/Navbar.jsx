@@ -19,7 +19,6 @@ const navItems = [
   { label: "Inicio", path: "/" },
   { label: "Sobre Nosotros", path: "/sobre-nosotros" },
   { label: "Especialidades", path: "/especialidades" },
-  { label: "Contacto", path: "/contacto" },
 ];
 
 function Navbar() {
