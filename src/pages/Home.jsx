@@ -29,7 +29,7 @@ function Home() {
                 sx={{
                     width: "100%",
                     position: "relative",
-                    height: { xs: "50vh", sm: "60vh", md: "70vh" },
+                    height: { xs: "25vh", sm: "40vh", md: "55vh" },
                     mt: 2,
                     bgcolor: "background.default",
                 }}
@@ -78,20 +78,36 @@ function Home() {
                         color: "common.white",
                     }}
                 >
-                    <Typography
-                        variant="h2"
-                        gutterBottom
-                        sx={{
-                            fontWeight: "bold",
-                            fontSize: { xs: "2rem", sm: "2.2rem", md: "3rem" },
-                        }}
-                    >
-                        Bienvenidos al consultorio de la Dra. Mariela Ronconi
-                    </Typography>
+                    <Box display={{ xs: "none", sm: "block" }}>
+                        <Typography
+                            variant="h2"
+                            gutterBottom
+                            sx={{
+                                fontWeight: "bold",
+                                fontSize: { sm: "2.2rem", md: "3rem" },
+                            }}
+                        >
+                            Bienvenidos al consultorio de la Dra. Mariela Ronconi
+                        </Typography>
+                    </Box>
+
+                    {/* Título corto (solo visible en xs) */}
+                    <Box display={{ xs: "block", sm: "none" }}>
+                        <Typography
+                            variant="h2"
+                            gutterBottom
+                            sx={{
+                                fontWeight: "bold",
+                                fontSize: "1.8rem",
+                            }}
+                        >
+                            Dra. Mariela Ronconi
+                        </Typography>
+                    </Box>
                     <Typography
                         variant="h5"
                         sx={{
-                            fontSize: { xs: "1.1rem", sm: "1.4rem", md: "1.8rem" },
+                            fontSize: { xs: "1rem", sm: "1.4rem", md: "1.8rem" },
                             py: 2,
                         }}
                     >
@@ -102,7 +118,7 @@ function Home() {
                         gutterBottom
                         sx={{
                             fontWeight: "bold",
-                            fontSize: { xs: "1.6rem", sm: "1.8rem", md: "2.2rem" },
+                            fontSize: { xs: "1.4rem", sm: "1.8rem", md: "2.2rem" },
                         }}
                     >
                         Calidez, Tecnología y Compromiso.

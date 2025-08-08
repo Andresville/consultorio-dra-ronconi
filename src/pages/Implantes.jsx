@@ -1,17 +1,26 @@
 import { Box, Typography, Container } from "@mui/material";
-import protesisBanner from "../assets/imagenes/protesis-banner.jpg";
-import protesisDetalle from "../assets/imagenes/protesis-banner1.jpg";
-import protesisDetalle1 from "../assets/imagenes/protesis-banner3.jpg";
+import implantesBanner from "../assets/imagenes/implantesBanner.jpg";
+import implantesDetalle from "../assets/imagenes/implantesDetalle1.jpg";
+import implantesDetalle1 from "../assets/imagenes/implantesDetalle2.jpg";
 import WhatsAppButton from "../components/WhatsAppButton";
 
 function Implantes() {
     return (
         <>
             {/* Banner */}
-            <Box sx={{ width: "100%", position: "relative", height: "45vh", overflow: "hidden", mt: 2 }}>
+            <Box sx={{
+                width: "100%",
+                position: "relative",
+                height: { xs: "25vh", sm: "40vh", md: "55vh" },
+                mt: 2,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "flex-start",
+                backgroundColor: "rgba(0, 0, 0, 0.4)",
+            }}>
                 <Box
                     component="img"
-                    src={protesisBanner}
+                    src={implantesBanner}
                     alt="Prótesis dentales"
                     sx={{
                         position: "absolute",
@@ -25,23 +34,19 @@ function Implantes() {
                 />
                 <Box
                     sx={{
-                        position: "absolute",
-                        top: 0,
-                        left: 0,
-                        width: "100%",
-                        height: "100%",
+                        position: "relative",
                         zIndex: 2,
-                        display: "flex",
-                        flexDirection: "column",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        textAlign: "center",
-                        backgroundColor: "rgba(0, 0, 0, 0.4)",
-                        px: 2,
                         color: "common.white",
+                        backgroundColor: "rgba(0, 0, 0, 0.5)",
+                        px: 4,
+                        py: 2,
+                        maxWidth: { xs: "100%", md: "50%" },
                     }}
                 >
-                    <Typography variant="h2" gutterBottom sx={{ fontWeight: "bold" }}>
+                    <Typography variant="h2" gutterBottom sx={{
+                        fontWeight: "bold",
+                        fontSize: { xs: "2rem", sm: "2.2rem", md: "3rem" }
+                    }}>
                         Implantes dentales
                     </Typography>
                 </Box>
@@ -59,7 +64,7 @@ function Implantes() {
                 >
                     <Box
                         component="img"
-                        src={protesisDetalle}
+                        src={implantesDetalle}
                         alt="Implante dental"
                         sx={{
                             width: { xs: "100%", md: "50%" },
@@ -92,7 +97,7 @@ function Implantes() {
                 >
                     <Box
                         component="img"
-                        src={protesisDetalle1}
+                        src={implantesDetalle1}
                         alt="Beneficios de implantes"
                         sx={{
                             width: { xs: "100%", md: "50%" },
